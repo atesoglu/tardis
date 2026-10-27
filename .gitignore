@@ -80,6 +80,7 @@ Thumbs.db
 *.p12
 .env
 .env.local
+deploy/.env
 .env.*.local
 local.settings.json
 appsettings.Development.json

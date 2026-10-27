@@ -62,6 +62,11 @@ services:
     build:
       context: ../dashboard
       dockerfile: Containerfile
+      args:
+        VITE_AZURE_AD_CLIENT_ID: ${VITE_AZURE_AD_CLIENT_ID:-}
+        VITE_AZURE_AD_TENANT_ID: ${VITE_AZURE_AD_TENANT_ID:-}
+        VITE_REDIRECT_URI: ${VITE_REDIRECT_URI:-http://localhost:3000}
+        VITE_API_BASE: ${VITE_API_BASE:-http://localhost:5000}
     container_name: tardis-dashboard
     ports:
       - "3000:8080"

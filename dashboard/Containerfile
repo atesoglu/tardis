@@ -1,14 +1,25 @@
 # syntax=docker/dockerfile:1
 
-# Build stage
+ARG VITE_AZURE_AD_CLIENT_ID
+ARG VITE_AZURE_AD_TENANT_ID
+ARG VITE_REDIRECT_URI=http://localhost:3000
+ARG VITE_API_BASE=http://localhost:5000
+
 FROM docker.io/library/node:22-alpine AS build
+ARG VITE_AZURE_AD_CLIENT_ID
+ARG VITE_AZURE_AD_TENANT_ID
+ARG VITE_REDIRECT_URI
+ARG VITE_API_BASE
+ENV VITE_AZURE_AD_CLIENT_ID=$VITE_AZURE_AD_CLIENT_ID
+ENV VITE_AZURE_AD_TENANT_ID=$VITE_AZURE_AD_TENANT_ID
+ENV VITE_REDIRECT_URI=$VITE_REDIRECT_URI
+ENV VITE_API_BASE=$VITE_API_BASE
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --cache /app/.npm-cache 2>/dev/null || npm install --cache /app/.npm-cache
+RUN npm ci --offline 2>/dev/null || npm install
 COPY . .
 RUN npm run build
 
-# Runtime via nginx (external image) for SPA hosting
 FROM docker.io/library/nginx:alpine AS runtime
 COPY --from=build /app/dist /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf

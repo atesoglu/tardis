@@ -22,7 +22,7 @@
 - **Backend API**: `Platform` HTTP service
 - **Background work**: `Workers` hosted services
 - **Persistence option**: optional shared `Persistence` library
-- **Local dev**: Podman + `deploy/compose.yaml` (provider-agnostic) with Postgres for local DB
+- **Local dev**: Podman + `podman compose -p tardis -f deploy/compose.yaml up -d` (provider-agnostic) with Postgres for local DB
 
 ## Repository Structure
 

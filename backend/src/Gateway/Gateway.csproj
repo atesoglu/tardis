@@ -6,6 +6,12 @@
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <PackageReference Include="Microsoft.Identity.Web" />
+    <PackageReference Include="Serilog.AspNetCore" />
+  </ItemGroup>
+
   <!-- No Ocelot — edge is pure ASP.NET Core (Minimal APIs + standard security middleware) -->
 
 </Project>

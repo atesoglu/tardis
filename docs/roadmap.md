@@ -100,7 +100,14 @@ Investing in **flow metrics** across 400 squads is increasingly treated as the l
 
 ---
 
-## Backend Project Topology
+## Local Development Environment
+
+- Container runtime: **Podman** (Fedora 44 friendly)
+- Compose file (provider-agnostic): `docker-compose.yaml` (works with Podman via `podman-compose`/`podman compose`)
+- Database: Postgres (cloud-agnostic by default, provider choice later)
+- Orchestrated tilt/workflows later if required
+
+## Backend Project Topology  
 
 ### Selected project names
 - **Gateway** — edge/BFF, auth/CORS/security, rate-limit, webhooks, BFF aggregation; DB-less.

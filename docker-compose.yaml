@@ -1,0 +1,21 @@
+# Provider-agnostic Docker Compose for local development
+# Runs under Podman (Fedora) and Docker equally.
+
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    profiles: [dev]
+    environment:
+      POSTGRES_DB: tardis
+      POSTGRES_USER: tardis
+      POSTGRES_PASSWORD: tardis  # DEV ONLY - rotate for prod
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres-data:

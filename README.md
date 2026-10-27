@@ -16,12 +16,13 @@
 - **Runtime**: .NET 10 (Web APIs)
 - **Platform**: Kubernetes (provider-/cloud-agnostic)
 - **IaC**: Terraform
-- **Auth**: Azure AD (Entra ID OAuth2/OIDC only — no B2C)
+- **Auth**: Azure AD (Entra ID OAuth2/OIDC only - no B2C)
 - **Frontend**: React SPA, separated in `frontend/`
 - **Gateway**: pure-edge (no DB; no Ocelot)
 - **Backend API**: `Platform` HTTP service
 - **Background work**: `Workers` hosted services
 - **Persistence option**: optional shared `Persistence` library
+- **Local dev**: Podman + `docker-compose.yaml` (provider-agnostic) with Postgres for local DB
 
 ## Repository Structure
 

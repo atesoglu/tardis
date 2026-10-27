@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci --cache /app/.npm-cache 2>/dev/null || npm install --cache /app/.npm-cache
 COPY . .
-RUN npm run build -- --port 3000 --host
+RUN npm run build
 
 # Runtime via nginx (external image) for SPA hosting
 FROM docker.io/library/nginx:alpine AS runtime

@@ -1,0 +1,16 @@
+# syntax=docker/dockerfile:1
+
+FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+WORKDIR /src
+COPY Tardis.slnx ./Tardis.slnx
+COPY Directory.Build.props Directory.Build.targets Directory.Packages.props global.json ./
+COPY src/Workers/Workers.csproj ./src/Workers/
+RUN dotnet restore src/Workers/Workers.csproj
+COPY . .
+WORKDIR /src/src/Workers
+RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
+WORKDIR /app
+COPY --from=build /app/publish .
+ENTRYPOINT ["dotnet", "Workers.dll"]

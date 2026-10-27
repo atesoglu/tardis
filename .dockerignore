@@ -1,0 +1,104 @@
+# Build outputs
+bin/
+obj/
+out/
+publish/
+
+# NuGet
+packages/
+.nuget/
+*.nupkg
+
+# Source control
+.git/
+.gitignore
+.gitattributes
+
+# IDE / Editor
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Test results
+TestResults/
+*.trx
+*.vsp
+*.coverage
+*.coveragexml
+coverage/
+
+# Documentation
+docs/
+*.md
+!README.md
+
+# Configuration (local)
+*.local.json
+*.Development.json
+local.settings.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# Secrets
+*secrets*.json
+*secret*.json
+*.pem
+*.key
+*.cert
+*.pfx
+*.p12
+.env
+.env.local
+.env.*.local
+
+# Temp
+tmp/
+temp/
+*.tmp
+*.temp
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+
+# Node (for Dashboard)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+dist/
+build/
+.next/
+.out/
+
+# Misc
+*.bak
+*.backup
+*.old
+*.orig

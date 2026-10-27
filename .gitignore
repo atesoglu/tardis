@@ -1,0 +1,131 @@
+# Build outputs
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!packages/build/
+!packages/repositories.config
+
+# VS / VS Code
+.vs/
+.vscode/
+*.swp
+*.swo
+*~
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# Test results
+TestResults/
+*.trx
+*.vsp
+*.coverage
+*.coveragexml
+
+# Azure
+.azure/
+*.pubxml
+*.azurePubxml
+PublishScripts/
+
+# Docker
+docker-compose.override.yml
+.docker/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+.terraform/
+.terraform.lock.hcl
+terraform.tfstate.backup
+
+# Bicep
+*.bicepparam
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets / sensitive (never commit)
+*secrets*.json
+*secret*.json
+*.pem
+*.key
+*.cert
+*.pfx
+*.p12
+.env
+.env.local
+.env.*.local
+local.settings.json
+appsettings.Development.json
+appsettings.Local.json
+appsettings.*.local.json
+
+# IDE / editors
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+.idea/
+*.iml
+
+# Rider
+*.sln.iml
+
+# BenchmarkDotNet
+BenchmarkDotNet.Artifacts/
+
+# Coverage
+coverage/
+.coverage/
+coverlet.results.json
+
+# Temp
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Node (for frontend if present)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Frontend build
+dist/
+build/
+.next/
+.out/
+
+# Misc
+*.bak
+*.backup
+*.old
+*.orig

@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/.meta/">
+    <File Path="../CHANGELOG.md" />
+    <File Path="../LICENSE" />
+    <File Path="../README.md" />
+  </Folder>
+  <Folder Name="/backend/">
+    <Project Path="src/Gateway/Gateway.csproj" />
+    <Project Path="src/Platform/Platform.csproj" />
+    <Project Path="src/Workers/Workers.csproj" />
+    <Project Path="src/Persistence/Persistence.csproj" />
+  </Folder>
+</Solution>

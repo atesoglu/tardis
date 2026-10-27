@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Description>Edge gateway placeholder (pure ASP.NET Core, no Ocelot). Implementation TBD.</Description>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <!-- No Ocelot — edge is pure ASP.NET Core (Minimal APIs + standard security middleware) -->
+
+</Project>

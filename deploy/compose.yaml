@@ -1,0 +1,32 @@
+services:
+  postgres:
+    image: docker.io/library/postgres:17-alpine
+    container_name: tardis-postgres
+    environment:
+      POSTGRES_USER: tardis
+      POSTGRES_PASSWORD: tardis
+      POSTGRES_DB: tardis
+    ports:
+      - "5432:5432"
+    volumes:
+      - ../database/migrations:/docker-entrypoint-initdb.d:Z
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tardis -d tardis"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  otel-collector:
+    image: docker.io/otel/opentelemetry-collector-contrib:latest
+    container_name: tardis-otel
+    ports:
+      - "4317:4317"
+      - "4318:4318"
+    volumes:
+      - ./otel-config.yaml:/etc/otel-collector-config.yaml:Z
+    command: ["--config=/etc/otel-collector-config.yaml"]
+
+volumes:
+  postgres-data:

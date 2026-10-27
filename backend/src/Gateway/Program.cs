@@ -79,6 +79,13 @@ app.MapGet("/health", () => Results.Ok("healthy")).AllowAnonymous();
 app.MapGet("/ready", () => Results.Ok("ready")).AllowAnonymous();
 app.MapFallback(() => Results.NotFound()).AllowAnonymous();
 
+// BFF placeholder endpoint consumed by frontend
+app.MapGet("/bff/dashboard", async (HttpContext ctx) =>
+{
+    var user = ctx.User.Identity?.Name ?? ctx.User.FindFirst("name")?.Value;
+    return Results.Ok(new { user = user ?? "anonymous", prCount = 0 });
+}).RequireAuthorization();
+
 app.Run();
 
 static string? GetValidIssuer(IConfiguration cfg)

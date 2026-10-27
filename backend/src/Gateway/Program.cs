@@ -79,7 +79,7 @@ app.MapGet("/health", () => Results.Ok("healthy")).AllowAnonymous();
 app.MapGet("/ready", () => Results.Ok("ready")).AllowAnonymous();
 app.MapFallback(() => Results.NotFound()).AllowAnonymous();
 
-// BFF placeholder endpoint consumed by frontend
+// BFF placeholder endpoint consumed by dashboard
 app.MapGet("/bff/dashboard", async (HttpContext ctx) =>
 {
     var user = ctx.User.Identity?.Name ?? ctx.User.FindFirst("name")?.Value;

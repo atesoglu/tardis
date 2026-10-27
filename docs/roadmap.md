@@ -6,7 +6,7 @@
 - IaC: Terraform (not Bicep)
 - Gateway: pure-edge, no Ocelot
 - Auth: Azure AD (Entra) only
-- Frontend: React SPA, separated into `frontend/` (BFF design TBD)
+- Frontend: React SPA, separated into `dashboard/` (BFF design TBD)
 - Common layer: removed for now (no shared libs)
 - No ADRs for now; decisions captured here & in README
 

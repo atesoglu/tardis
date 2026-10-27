@@ -7,7 +7,7 @@
 - **Gateway** (pure-edge / BFF): Auth, CORS, security headers, rate-limiting, webhooks, BFF aggregation. **DB-less.**
 - **Platform** (backend HTTP API): Query & command endpoints; owns database access.
 - **Workers** (background services): ingestion, scoring, notifications, scheduled jobs (HTTP-only end-to-end for MVP).
-- Frontend: React SPA (`frontend/`) behind the Gateway (BFF).
+- Frontend: React SPA (`dashboard/`) behind the Gateway (BFF).
 - IaC: Terraform (Kubernetes-focused).
 - Authentication: Azure AD (Entra ID) only.
 
@@ -17,7 +17,7 @@
 - **Platform**: Kubernetes (provider-/cloud-agnostic)
 - **IaC**: Terraform
 - **Auth**: Azure AD (Entra ID OAuth2/OIDC only - no B2C)
-- **Frontend**: React SPA, separated in `frontend/`
+- **Frontend**: React SPA, separated in `dashboard/`
 - **Gateway**: pure-edge (no DB; no Ocelot)
 - **Backend API**: `Platform` HTTP service
 - **Background work**: `Workers` hosted services
@@ -31,7 +31,7 @@
 ├── backend/                 # .NET 10 backend services + .slnx
 │   ├── src/Gateway/         # Edge/BFF (pure-edge, DB-less)
 │   └── Tardis.slnx
-├── frontend/                # React SPA (BFF-friendly, isolated)
+├── dashboard/                # React SPA (BFF-friendly, isolated)
 ├── infra/terraform          # Terraform for GitOps/IaC
 ├── docs/roadmap.md          # Single source of truth for direction
 └── Directory.Build.*        # Shared MSBuild/cpm configuration

@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Persistence**: Shared data-access layer
 
 ### Frontend (Dashboard)
-- React SPA root at `frontend/` (placeholder, BFF-friendly)
+- React SPA root at `dashboard/` (placeholder, BFF-friendly)
 
 ## [0.1.0] - 2026-10-27
 

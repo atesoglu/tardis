@@ -110,7 +110,7 @@ temp/
 *.tmp
 *.temp
 
-# Node (for frontend if present)
+# Node (for dashboard if present)
 node_modules/
 npm-debug.log*
 yarn-debug.log*

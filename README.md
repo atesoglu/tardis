@@ -22,7 +22,7 @@
 - **Backend API**: `Platform` HTTP service
 - **Background work**: `Workers` hosted services
 - **Persistence option**: optional shared `Persistence` library
-- **Local dev**: Podman + `podman compose -p tardis -f deploy/compose.yaml up -d` (provider-agnostic) with Postgres for local DB
+- **Local dev**: `dotnet run` (backend) + `npm run dev` (dashboard). Optional Postgres via Podman replaced by file-based **SQLite** (`tardis.db` under `./data`) for local dev.
 
 ## Repository Structure
 

@@ -1,22 +1,6 @@
 services:
-  postgres:
-    image: docker.io/library/postgres:17-alpine
-    container_name: tardis-postgres
-    environment:
-      POSTGRES_USER: tardis
-      POSTGRES_PASSWORD: tardis
-      POSTGRES_DB: tardis
-    ports:
-      - "5432:5432"
-    volumes:
-      - ../database/migrations:/docker-entrypoint-initdb.d:Z
-      - postgres-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U tardis -d tardis"]
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    restart: unless-stopped
+  # --- Local SQLite provider: bind-mount host data folder ---
+  # Ensures consistent 'tardis.db' file between host and containers.
 
   gateway:
     build:
@@ -30,6 +14,8 @@ services:
       - AzureAd__Instance=https://login.microsoftonline.com/
       - AzureAd__TenantId=00000000-0000-0000-0000-000000000000
       - AzureAd__Audience=api://tardis
+    volumes:
+      - ../data:/data
     restart: unless-stopped
 
   platform:
@@ -39,7 +25,7 @@ services:
     container_name: tardis-platform
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__Default=Host=postgres;Database=tardis;Username=tardis;Password=tardis
+      - ConnectionStrings__Default=Data Source=/data/tardis.db
     depends_on:
       postgres:
         condition: service_healthy
@@ -52,7 +38,7 @@ services:
     container_name: tardis-workers
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - ConnectionStrings__Default=Host=postgres;Database=tardis;Username=tardis;Password=tardis
+      - ConnectionStrings__Default=Data Source=/data/tardis.db
     depends_on:
       postgres:
         condition: service_healthy

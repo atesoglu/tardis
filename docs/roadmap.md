@@ -104,7 +104,7 @@ Investing in **flow metrics** across 400 squads is increasingly treated as the l
 
 - Container runtime: **Podman** (Fedora 44 friendly)
 - Compose file (provider-agnostic): `deploy/compose.yaml` (run with `podman compose -p tardis -f deploy/compose.yaml`)
-- Database: Postgres (cloud-agnostic by default, provider choice later)
+- Database: SQLite (file-based local dev; cloud provider choice later)
 - Orchestrated tilt/workflows later if required
 
 ## Backend Project Topology  

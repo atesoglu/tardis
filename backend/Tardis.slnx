@@ -1,4 +1,14 @@
 <Solution>
+  <Folder Name="/.config/">
+    <File Path="..\.dockerignore" />
+    <File Path="..\.editorconfig" />
+    <File Path="..\.env.example" />
+    <File Path="..\.gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+  </Folder>
   <Folder Name="/.meta/">
     <File Path="../CHANGELOG.md" />
     <File Path="../LICENSE" />

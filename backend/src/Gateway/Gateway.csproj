@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
-    <Description>Edge gateway placeholder (pure ASP.NET Core, no Ocelot). Implementation TBD.</Description>
+    <Description>Edge gateway.</Description>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
@@ -12,6 +12,8 @@
     <PackageReference Include="Serilog.AspNetCore" />
   </ItemGroup>
 
-  <!-- No Ocelot — edge is pure ASP.NET Core (Minimal APIs + standard security middleware) -->
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 
 </Project>

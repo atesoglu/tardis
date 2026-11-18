@@ -3,6 +3,9 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
+    <!-- Database (scoped 'cloud-agnostic' SQLite for local dev) -->
+    <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.7" />
+
     <!-- Host/worker composition -->
     <PackageVersion Include="Microsoft.Extensions.Hosting" Version="10.0.0" />
 
